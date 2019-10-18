@@ -2,25 +2,34 @@
   <div class="layout__index">
     <div class="layout__index__canvas">
       <gear-clock-base />
-      <gear-clock-mini
-        v-for="(clockMini, index) in clockMinis"
-        :key="index"
-        :size="clockMini.size"
-        :x-point="clockMini.xPoint"
-        :y-point="clockMini.yPoint"
-      />
+      <div v-for="(clockMini, index) in clockMinis" :key="index">
+        <gear-clock-mini-left
+          v-if="index % 2 === 0"
+          :size="clockMini.size"
+          :x-point="clockMini.xPoint"
+          :y-point="clockMini.yPoint"
+        />
+        <gear-clock-mini-right
+          v-else
+          :size="clockMini.size"
+          :x-point="clockMini.xPoint"
+          :y-point="clockMini.yPoint"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import GearClockBase from '~/components/GearClockBase.vue'
-import GearClockMini from '~/components/GearClockMini.vue'
+import GearClockMiniLeft from '~/components/GearClockMiniLeft.vue'
+import GearClockMiniRight from '~/components/GearClockMiniRight.vue'
 
 export default {
   components: {
     GearClockBase,
-    GearClockMini
+    GearClockMiniLeft,
+    GearClockMiniRight
   },
   data: () => ({
     clockMinis: [

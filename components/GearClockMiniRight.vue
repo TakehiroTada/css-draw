@@ -25,7 +25,8 @@ export default {
   props: {
     size: { type: Number, required: true },
     xPoint: { type: Number, required: true },
-    yPoint: { type: Number, required: true }
+    yPoint: { type: Number, required: true },
+    backSpin: { type: Boolean, default: false }
   },
   computed: {
     clockSize() {
@@ -36,16 +37,44 @@ export default {
         left: this.yPoint + '%'
       }
     }
+    // Todo: キーフレームのスタイルが違う名前空間にあるので、実装を検討する必要がある
+    // spin() {
+    //   return this.backSpin
+    //     ? {
+    //         'animation-name': 'right-spin',
+    //         'animation-duration': '4s',
+    //         'animation-iteration-count': 'infinite',
+    //         'nimation-timing-function': 'linear'
+    //       }
+    //     : {
+    //         'animation-name': 'left-spin',
+    //         'animation-duration': '4s',
+    //         'animation-iteration-count': 'infinite',
+    //         'nimation-timing-function': 'linear'
+    //       }
+    // }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@keyframes right-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .layout__gear-clock-mini {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation-name: right-spin;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 .layout__gear-clock-mini__large-circle {
   z-index: 0;
