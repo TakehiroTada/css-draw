@@ -1,22 +1,29 @@
 <template>
   <div class="layout__index">
-    <div class="layout__index__background"></div>
+    <div class="layout__index__canvas">
+      <gear-clock />
+    </div>
   </div>
 </template>
 
 <script>
+import GearClock from '~/components/GearClock.vue'
+
 export default {
-  components: {}
+  components: {
+    GearClock
+  }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .layout__index {
   display: flex;
 }
-.layout__index__background {
+.layout__index__canvas {
   width: 1000px;
   height: 1000px;
+  border: 1px solid white;
   background-color: black;
 }
 </style>
