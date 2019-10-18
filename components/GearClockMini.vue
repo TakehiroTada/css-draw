@@ -1,19 +1,19 @@
 <template>
-  <div class="layout__gear-clock" :style="clockSize">
+  <div class="layout__gear-clock-mini" :style="clockSize">
     <!-- 外側のギザギザ用 -->
-    <div class="layout__gear-clock__large-circle">
-      <div class="layout__gear-clock__large-circle__bar1" />
-      <div class="layout__gear-clock__large-circle__bar2" />
-      <div class="layout__gear-clock__large-circle__bar3" />
-      <div class="layout__gear-clock__large-circle__bar4" />
+    <div class="layout__gear-clock-mini__large-circle">
+      <div class="layout__gear-clock-mini__large-circle__bar1" />
+      <div class="layout__gear-clock-mini__large-circle__bar2" />
+      <div class="layout__gear-clock-mini__large-circle__bar3" />
+      <div class="layout__gear-clock-mini__large-circle__bar4" />
       <!-- 中央の扇型用 -->
-      <div class="layout__gear-clock__middle-circle">
+      <div class="layout__gear-clock-mini__middle-circle">
         <!-- 中央の小さな円用 -->
-        <div class="layout__gear-clock__small-circle">
-          <div class="layout__gear-clock__small-circle__border-top" />
-          <div class="layout__gear-clock__small-circle__border-bottom" />
-          <div class="layout__gear-clock__small-circle__border-left" />
-          <div class="layout__gear-clock__small-circle__border-right" />
+        <div class="layout__gear-clock-mini__small-circle">
+          <div class="layout__gear-clock-mini__small-circle__border-top" />
+          <div class="layout__gear-clock-mini__small-circle__border-bottom" />
+          <div class="layout__gear-clock-mini__small-circle__border-left" />
+          <div class="layout__gear-clock-mini__small-circle__border-right" />
         </div>
       </div>
     </div>
@@ -22,15 +22,18 @@
 
 <script>
 export default {
+  props: {
+    size: { type: Number, required: true },
+    xPoint: { type: Number, required: true },
+    yPoint: { type: Number, required: true }
+  },
   computed: {
-    widthSize() {
-      const size = window.innerWidth <= 1000 ? window.innerWidth : 1000
-      return size + 'px'
-    },
     clockSize() {
       return {
-        width: this.widthSize,
-        height: this.widthSize
+        width: this.size + '%',
+        height: this.size + '%',
+        top: this.xPoint + '%',
+        left: this.yPoint + '%'
       }
     }
   }
@@ -38,15 +41,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.layout__gear-clock {
-  /* position: relative; */
-  /* width: 800px;
-  height: 800px; */
+.layout__gear-clock-mini {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.layout__gear-clock__large-circle {
+.layout__gear-clock-mini__large-circle {
   z-index: 0;
   display: flex;
   justify-content: center;
@@ -90,7 +91,7 @@ export default {
     transform: rotate(135deg);
   }
 }
-.layout__gear-clock__middle-circle {
+.layout__gear-clock-mini__middle-circle {
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -100,7 +101,7 @@ export default {
   border-radius: 50%;
   background: black;
 }
-.layout__gear-clock__small-circle {
+.layout__gear-clock-mini__small-circle {
   z-index: 2;
   position: relative;
   display: flex;
