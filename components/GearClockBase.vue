@@ -24,6 +24,7 @@
                 class="layout__gear-clock__small-circle__hand__minute-hand"
               />
             </div>
+            <div class="layout__gear-clock__small-circle__hand__ellipse" />
           </div>
           <div class="layout__gear-clock__small-circle__border-top" />
           <div class="layout__gear-clock__small-circle__border-bottom" />
@@ -132,16 +133,19 @@ export default {
   background: linear-gradient(150deg, #985f2a, #a08435);
 
   &__hand {
+    position: relative;
+    width: 100%;
+    height: 100%;
     display: flex;
     width: 45%;
     height: 45%;
     border-radius: 50%;
     background: white;
-
-    display: flex;
     &__second {
       position: relative;
       width: 100%;
+      height: 100%;
+
       &-hand {
         position: absolute;
         width: 9%;
@@ -159,6 +163,16 @@ export default {
     &__hour {
     }
     &__minute {
+    }
+
+    &__ellipse {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 35%;
+      height: 35%;
+      border-radius: 50%;
+      background: black;
     }
   }
 
