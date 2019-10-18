@@ -24,7 +24,7 @@
                 class="layout__gear-clock__small-circle__hand__minute-hand"
               />
             </div>
-            <div class="layout__gear-clock__small-circle__hand__ellipse" />
+            <!-- <div class="layout__gear-clock__small-circle__hand__ellipse" /> -->
           </div>
           <div class="layout__gear-clock__small-circle__border-top" />
           <div class="layout__gear-clock__small-circle__border-bottom" />
@@ -122,17 +122,18 @@ export default {
   background: black;
 }
 .layout__gear-clock__small-circle {
-  z-index: 2;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
+  position: relative;
   width: 18%;
   height: 18%;
   border-radius: 50%;
   background: linear-gradient(150deg, #985f2a, #a08435);
 
   &__hand {
+    display: flex;
     position: relative;
     width: 100%;
     height: 100%;
@@ -142,35 +143,77 @@ export default {
     border-radius: 50%;
     background: white;
     &__second {
-      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       height: 100%;
-
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      animation-name: right-spin;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      transform-origin: center;
       &-hand {
-        position: absolute;
         width: 9%;
         height: 579%;
-        top: -529%;
-        left: 45%;
+        margin-top: -579%;
         background-color: blue;
-        animation-name: right-spin;
-        animation-duration: 60s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        transform-origin: right bottom;
       }
     }
     &__hour {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      animation-name: right-spin;
+      animation-duration: 30s;
+      /* animation-duration: 86400s; */
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      transform-origin: center;
+      &-hand {
+        width: 9%;
+        height: 579%;
+        margin-top: -579%;
+        background-color: red;
+      }
     }
     &__minute {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      animation-name: right-spin;
+      /* animation-duration: 3600s; */
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      transform-origin: center;
+      &-hand {
+        width: 9%;
+        height: 579%;
+        margin-top: -579%;
+        background-color: yellow;
+      }
     }
 
     &__ellipse {
       position: absolute;
-      top: 5%;
-      left: 5%;
-      width: 35%;
-      height: 35%;
+      top: 20%;
+      left: 19%;
+      width: 60%;
+      height: 60%;
       border-radius: 50%;
       background: black;
     }
