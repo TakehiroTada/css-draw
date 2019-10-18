@@ -15,16 +15,20 @@
               <div
                 class="layout__gear-clock__small-circle__hand__second-hand"
               />
+              <div
+                class="layout__gear-clock__small-circle__hand__second-edge"
+              />
             </div>
             <div class="layout__gear-clock__small-circle__hand__hour">
               <div class="layout__gear-clock__small-circle__hand__hour-hand" />
+              <div class="layout__gear-clock__small-circle__hand__hour-edge" />
             </div>
             <div class="layout__gear-clock__small-circle__hand__minute">
               <div
                 class="layout__gear-clock__small-circle__hand__minute-hand"
               />
             </div>
-            <!-- <div class="layout__gear-clock__small-circle__hand__ellipse" /> -->
+            <div class="layout__gear-clock__small-circle__hand__ellipse" />
           </div>
           <div class="layout__gear-clock__small-circle__border-top" />
           <div class="layout__gear-clock__small-circle__border-bottom" />
@@ -161,6 +165,14 @@ export default {
         height: 579%;
         margin-top: -579%;
         background-color: blue;
+      }
+      &-edge {
+        width: 29%;
+        height: 145%;
+        position: absolute;
+        top: 35%;
+        left: 33%;
+        background: blue;
       }
     }
     &__hour {
