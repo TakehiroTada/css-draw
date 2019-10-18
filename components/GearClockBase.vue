@@ -10,6 +10,21 @@
       <div class="layout__gear-clock__middle-circle">
         <!-- 中央の小さな円用 -->
         <div class="layout__gear-clock__small-circle">
+          <div class="layout__gear-clock__small-circle__hand">
+            <div class="layout__gear-clock__small-circle__hand__second">
+              <div
+                class="layout__gear-clock__small-circle__hand__second-hand"
+              />
+            </div>
+            <div class="layout__gear-clock__small-circle__hand__hour">
+              <div class="layout__gear-clock__small-circle__hand__hour-hand" />
+            </div>
+            <div class="layout__gear-clock__small-circle__hand__minute">
+              <div
+                class="layout__gear-clock__small-circle__hand__minute-hand"
+              />
+            </div>
+          </div>
           <div class="layout__gear-clock__small-circle__border-top" />
           <div class="layout__gear-clock__small-circle__border-bottom" />
           <div class="layout__gear-clock__small-circle__border-left" />
@@ -38,10 +53,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@keyframes right-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .layout__gear-clock {
-  /* position: relative; */
-  /* width: 800px;
-  height: 800px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,10 +124,43 @@ export default {
   z-index: 2;
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 18%;
   height: 18%;
   border-radius: 50%;
   background: linear-gradient(150deg, #985f2a, #a08435);
+
+  &__hand {
+    display: flex;
+    width: 45%;
+    height: 45%;
+    border-radius: 50%;
+    background: white;
+
+    display: flex;
+    &__second {
+      position: relative;
+      width: 100%;
+      &-hand {
+        position: absolute;
+        width: 9%;
+        height: 579%;
+        top: -529%;
+        left: 45%;
+        background-color: blue;
+        animation-name: right-spin;
+        animation-duration: 60s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        transform-origin: right bottom;
+      }
+    }
+    &__hour {
+    }
+    &__minute {
+    }
+  }
 
   &__border-top {
     position: absolute;
