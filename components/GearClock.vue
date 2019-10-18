@@ -47,8 +47,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
   /* 背景色のグラデーション */
   background: linear-gradient(150deg, #985f2a, #a08435);
@@ -72,17 +72,17 @@ export default {
 
   &__border-top {
     position: absolute;
-    top: -301px;
-    left: -102px;
+    top: -192%;
+    left: -61%;
     width: 16%;
     height: 231%;
-    transform: rotate(-41deg);
+    transform: rotate(-39deg);
     background: linear-gradient(150deg, #985f2a, #a08435);
   }
   &__border-bottom {
     position: absolute;
-    top: 92px;
-    left: 237px;
+    top: 60%;
+    left: 148%;
     width: 16%;
     height: 231%;
     transform: rotate(-41deg);
@@ -90,8 +90,8 @@ export default {
   }
   &__border-left {
     position: absolute;
-    top: 47px;
-    left: -146px;
+    top: 31%;
+    left: -89%;
     width: 16%;
     height: 231%;
     transform: rotate(-126deg);
@@ -99,8 +99,8 @@ export default {
   }
   &__border-right {
     position: absolute;
-    top: -260px;
-    left: 274px;
+    top: -165%;
+    left: 173%;
     width: 16%;
     height: 231%;
     transform: rotate(-126deg);
