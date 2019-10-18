@@ -1,17 +1,17 @@
 <template>
   <div class="layout__index">
     <div class="layout__index__canvas">
-      <gear-clock />
+      <gear-clock-base />
     </div>
   </div>
 </template>
 
 <script>
-import GearClock from '~/components/GearClock.vue'
+import GearClockBase from '~/components/GearClockBase.vue'
 
 export default {
   components: {
-    GearClock
+    GearClockBase
   }
 }
 </script>
