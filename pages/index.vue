@@ -1,13 +1,6 @@
 <template>
-  <div class="hoge">
-    <div class="hogehoge">
-      <span>
-        aaaa
-      </span>
-      <span>
-        aaaaaaaa
-      </span>
-    </div>
+  <div class="layout__index">
+    <div class="layout__index__background"></div>
   </div>
 </template>
 
@@ -18,9 +11,12 @@ export default {
 </script>
 
 <style lang="scss">
-.hoge {
-  .hogehoge {
-    display: flex;
-  }
+.layout__index {
+  display: flex;
+}
+.layout__index__background {
+  width: 1000px;
+  height: 1000px;
+  background-color: black;
 }
 </style>
