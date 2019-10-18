@@ -19,6 +19,8 @@ export default {
 <style lang="scss" scoped>
 .layout__index {
   display: flex;
+  width: 100%;
+  height: 100%;
 }
 .layout__index__canvas {
   width: 1000px;

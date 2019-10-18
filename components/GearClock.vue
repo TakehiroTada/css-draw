@@ -1,5 +1,5 @@
 <template>
-  <div class="layout__gear-clock">
+  <div class="layout__gear-clock" :style="clockSize">
     <!-- 外側のギザギザ用 -->
     <div class="layout__gear-clock__large-circle">
       <!-- 中央の扇型用 -->
@@ -17,14 +17,28 @@
 </template>
 
 <script>
-export default {}
+export default {
+  components: {},
+  computed: {
+    widthSize() {
+      const size = window.innerWidth <= 1000 ? window.innerWidth : 1000
+      return size + 'px'
+    },
+    clockSize() {
+      return {
+        width: this.widthSize,
+        height: this.widthSize
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 .layout__gear-clock {
   /* position: relative; */
-  width: 100%;
-  height: 100%;
+  /* width: 800px;
+  height: 800px; */
   display: flex;
   justify-content: center;
   align-items: center;
