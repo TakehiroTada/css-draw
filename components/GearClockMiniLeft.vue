@@ -72,7 +72,7 @@ export default {
   justify-content: center;
   align-items: center;
   animation-name: left-spin;
-  animation-duration: 4s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
