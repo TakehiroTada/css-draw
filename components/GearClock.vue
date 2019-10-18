@@ -2,6 +2,10 @@
   <div class="layout__gear-clock" :style="clockSize">
     <!-- 外側のギザギザ用 -->
     <div class="layout__gear-clock__large-circle">
+      <div class="layout__gear-clock__large-circle__bar1" />
+      <div class="layout__gear-clock__large-circle__bar2" />
+      <div class="layout__gear-clock__large-circle__bar3" />
+      <div class="layout__gear-clock__large-circle__bar4" />
       <!-- 中央の扇型用 -->
       <div class="layout__gear-clock__middle-circle">
         <!-- 中央の小さな円用 -->
@@ -44,6 +48,7 @@ export default {
   align-items: center;
 }
 .layout__gear-clock__large-circle {
+  z-index: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,8 +57,42 @@ export default {
   border-radius: 50%;
   /* 背景色のグラデーション */
   background: linear-gradient(150deg, #985f2a, #a08435);
+
+  position: relative;
+  &__bar1 {
+    position: absolute;
+    width: 8%;
+    height: 115%;
+    top: -7%;
+    background: linear-gradient(150deg, #985f2a, #a08435);
+  }
+  &__bar2 {
+    position: absolute;
+    width: 8%;
+    height: 115%;
+    top: -7%;
+    background: linear-gradient(150deg, #985f2a, #a08435);
+    transform: rotate(45deg);
+  }
+  &__bar3 {
+    position: absolute;
+    width: 8%;
+    height: 115%;
+    top: -7%;
+    background: linear-gradient(150deg, #985f2a, #a08435);
+    transform: rotate(90deg);
+  }
+  &__bar4 {
+    position: absolute;
+    width: 8%;
+    height: 115%;
+    top: -7%;
+    background: linear-gradient(150deg, #985f2a, #a08435);
+    transform: rotate(135deg);
+  }
 }
 .layout__gear-clock__middle-circle {
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,6 +102,7 @@ export default {
   background: black;
 }
 .layout__gear-clock__small-circle {
+  z-index: 2;
   position: relative;
   display: flex;
   width: 18%;
