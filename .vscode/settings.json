@@ -1,3 +1,18 @@
 {
-    "editor.formatOnSave" : true
+  "eslint.enable": true, // ESLint有効化
+  // 適応するファイルタイプを決定
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+  // プロジェクト配下のeslintrc.jsを読み込み
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
+  // 保存時にESLint--fixで自動フォーマット どちらかで良い
+  "editor.formatOnSave": false,
+  "eslint.autoFixOnSave": true
 }
